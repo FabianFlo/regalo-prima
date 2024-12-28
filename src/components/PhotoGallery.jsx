@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import "./PhotoGallery.css";
+import React, { useState } from 'react';
+import './PhotoGallery.css';
 
 const photos = [
-  { src: "/photos/photo1.jpg", message: "Nuestro primer viaje juntas" },
-  { src: "/photos/photo2.jpg", message: "Un día especial" },
-  { src: "/photos/photo3.jpg", message: "Recuerdo inolvidable" },
+  { src: '/photos/photo1.jpg', message: 'Nuestro primer viaje juntas' },
+  { src: '/photos/photo2.jpg', message: 'Un día especial' },
+  { src: '/photos/photo3.jpg', message: 'Recuerdo inolvidable' },
 ];
 
 export const PhotoGallery = () => {

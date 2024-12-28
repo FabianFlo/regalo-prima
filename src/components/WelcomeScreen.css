@@ -1,15 +1,52 @@
-.welcome-screen {
-    text-align: center;
-    margin-bottom: 20px;
+.welcome-card {
+  background-color: #ffb3c1;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 350px; /* Tamaño máximo de la carta */
+  text-align: center;
+  margin: 0 auto;
+}
+
+.welcome-card h1 {
+  font-size: 2.5em; /* Aumentamos el tamaño del título */
+  color: #ff69b4;
+}
+
+.welcome-card p {
+  font-size: 1.3em; /* Aumentamos el tamaño del texto */
+  color: #333;
+}
+
+.start-btn {
+  background-color: #ff69b4;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  margin-top: 20px;
+  font-size: 1.2em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-btn:hover {
+  background-color: #ff4a6e;
+}
+
+/* Responsividad: ajusta el tamaño en pantallas pequeñas */
+@media (max-width: 600px) {
+  .welcome-card h1 {
+    font-size: 2em; /* Reducir el tamaño del texto en pantallas más pequeñas */
   }
-  
-  .welcome-screen h1 {
-    font-size: 2em;
-    color: #ff69b4;
+
+  .welcome-card p {
+    font-size: 1em;
   }
-  
-  .welcome-screen p {
-    font-size: 1.2em;
-    color: #333;
+
+  .start-btn {
+    font-size: 1.1em;
+    padding: 12px 25px;
   }
-  
+}

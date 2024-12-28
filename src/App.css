@@ -1,15 +1,18 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #ffe4e1;
-  color: #333;
+  background-color: #9f41ad; /* Color de fondo solicitado */
+  color: #fff; /* Texto blanco para contrastar con el fondo */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 20px; /* Un pequeño margen para que no se vea pegado al borde */
+  box-sizing: border-box;
 }
 
 .app {
   max-width: 800px;
-  margin: 20px;
+  width: 100%;
+  text-align: center;
 }

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Código QR</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ff7eb3, #ff758c);
+            color: #fff;
+        }
+        .container {
+            text-align: center;
+            background: #ffffff;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+        }
+        .container h1 {
+            margin-bottom: 15px;
+            font-size: 24px;
+            color: #ff758c;
+        }
+        #qrcode-wrapper {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+        }
+        #qrcode {
+            width: 100%;
+            height: 100%;
+        }
+        .emoji {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 36px;
+            background: #ffffff;
+            border-radius: 50%;
+            padding: 5px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #fff;
+            background: #ff758c;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #ff4a6e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Con Mucho Cariño Prima</h1>
+        <div id="qrcode-wrapper">
+            <div id="qrcode"></div>
+            <div class="emoji">❣️</div>
+        </div>
+        <!-- <a href="https://fabianflo.github.io/regalo-prima/" class="btn" target="_blank">Ir al sitio web</a> -->
+        <div class="footer">Escanea el código QR para visitar el sitio web.</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        // URL a codificar
+        const url = "https://fabianflo.github.io/regalo-prima/";
+
+        // Generar el código QR
+        const qrElement = document.getElementById("qrcode");
+        new QRCode(qrElement, {
+            text: url,
+            width: 200,
+            height: 200,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+</body>
+</html>

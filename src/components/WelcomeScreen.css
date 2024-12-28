@@ -1,0 +1,15 @@
+.welcome-screen {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-screen h1 {
+    font-size: 2em;
+    color: #ff69b4;
+  }
+  
+  .welcome-screen p {
+    font-size: 1.2em;
+    color: #333;
+  }
+  

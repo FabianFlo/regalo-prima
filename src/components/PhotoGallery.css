@@ -34,19 +34,12 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Hacer que las imágenes sean cuadradas pero sin recorte */
+/* Hacer que todas las imágenes tengan el mismo tamaño */
 .photo {
-  width: 100%;
-  height: 100%; /* Hace que la imagen ocupe todo el espacio */
+  width: 240px;  /* Tamaño fijo para todas las imágenes */
+  height: 240px; /* Tamaño fijo para todas las imágenes */
   object-fit: contain; /* Ajusta la imagen sin recortarla */
   border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-/* Asegurarnos de que las imágenes verticales se redimensionen y no sobresalgan */
-.photo.vertical {
-  max-height: 350px; /* Ajusta la altura máxima para imágenes verticales */
-  object-fit: contain;
   margin-bottom: 10px;
 }
 
@@ -105,14 +98,9 @@
 
   /* Estilo para la imagen */
   .photo {
-    height: 100%; /* Asegura que la imagen ocupe todo el espacio del contenedor cuadrado */
-  }
-
-  /* Para las imágenes verticales, dar un tamaño fijo de 240x350 */
-  .photo.vertical {
-    width: 240px;
-    height: 350px;
-    object-fit: contain; /* Mantiene la proporción sin recortar */
+    width: 240px;  /* Tamaño fijo para las imágenes en móvil */
+    height: 305px; /* Tamaño fijo para las imágenes en móvil */
+    object-fit: contain; /* Asegura que la imagen no se recorte */
   }
 
   /* Ajuste de la fuente del mensaje */
@@ -124,56 +112,5 @@
   .controls button {
     font-size: 1em;
     padding: 12px 25px;
-  }
-}
-
-/* Pantallas medianas (tabletas) */
-@media (max-width: 1000px) {
-  .photo-gallery {
-    padding: 20px;
-  }
-
-  .photo-container {
-    max-width: 300px; /* Reducir tamaño de las tarjetas */
-    height: auto; /* Ajuste automático de la altura */
-  }
-
-  .photo {
-    height: 100%;
-  }
-
-  .photo-message {
-    font-size: 1.1em;
-  }
-
-  .controls button {
-    font-size: 1.05em;
-    padding: 12px 25px;
-  }
-}
-
-/* Pantallas grandes (desktop) */
-@media (min-width: 1000px) {
-  .photo-gallery {
-    padding: 40px;
-    gap: 30px; /* Aumentar el espacio entre las tarjetas */
-  }
-
-  .photo-container {
-    width: 300px;
-    height: auto; /* Ajuste automático de la altura */
-  }
-
-  .photo {
-    height: 100%;
-  }
-
-  .photo-message {
-    font-size: 1.2em;
-  }
-
-  .controls button {
-    font-size: 1.2em;
-    padding: 14px 30px;
   }
 }

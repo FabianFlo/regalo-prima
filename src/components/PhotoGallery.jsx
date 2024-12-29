@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+// PhotoGallery.jsx
+import React, { useState } from 'react';
 import './PhotoGallery.css';
 
 // Importar las imágenes con la ruta correcta
@@ -27,8 +28,8 @@ const PhotoGallery = () => {
   const photos = [
     { src: img1, alt: 'Foto 1', message: 'Recuerdo 1' },
     { src: img2, alt: 'Foto 2', message: 'Recuerdo 2' },
-    { src: img3, alt: 'Foto 3', message: 'Recuerdo 3' },
-    { src: img4, alt: 'Foto 4', message: 'Recuerdo 4' },
+    { src: img3, alt: 'Foto 3', message: 'Recuerdo 3', className: 'photo-03' }, // Clases específicas
+    { src: img4, alt: 'Foto 4', message: 'Recuerdo 4', className: 'photo-04' }, // Clases específicas
     { src: img5, alt: 'Foto 5', message: 'Recuerdo 5' },
     { src: img6, alt: 'Foto 6', message: 'Recuerdo 6' },
     { src: img7, alt: 'Foto 7', message: 'Recuerdo 7' },
@@ -48,22 +49,6 @@ const PhotoGallery = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [imageSizes, setImageSizes] = useState([]);
-
-  useEffect(() => {
-    // Obtener las dimensiones de las imágenes después de que se carguen
-    const images = photos.map(photo => {
-      const img = new Image();
-      img.src = photo.src;
-      img.onload = () => {
-        setImageSizes(prevSizes => [
-          ...prevSizes,
-          { width: img.width, height: img.height },
-        ]);
-      };
-      return img;
-    });
-  }, []);
 
   const nextPhoto = () => {
     if (currentIndex < photos.length - 1) {
@@ -84,10 +69,10 @@ const PhotoGallery = () => {
   return (
     <div className="photo-gallery">
       <div className="photo-container">
-        <img
-          src={photos[currentIndex].src}
-          alt={photos[currentIndex].alt}
-          className={`photo ${imageSizes[currentIndex]?.height > imageSizes[currentIndex]?.width ? 'vertical' : ''}`}
+        <img 
+          src={photos[currentIndex].src} 
+          alt={photos[currentIndex].alt} 
+          className={`photo ${photos[currentIndex].className ? photos[currentIndex].className : ''}`} 
         />
         <p className="photo-message">{photos[currentIndex].message}</p>
       </div>

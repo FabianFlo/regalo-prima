@@ -64,6 +64,7 @@
 
 @media (max-width: 1000px) {
   .welcome-card {
+    margin-bottom: 80%;
     max-width: 80%; /* Carta más pequeña en pantallas intermedias */
   }
 

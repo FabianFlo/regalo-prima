@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { WelcomeScreen } from './components/WelcomeScreen';
-import { PhotoGallery } from './components/PhotoGallery';
+import PhotoGallery from './components/PhotoGallery';
+
 import './App.css';
 
 function App() {

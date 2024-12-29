@@ -1,51 +1,179 @@
+/* Contenedor principal de la galería */
 .photo-gallery {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+  margin-top: 30px;
+  align-items: center;
 }
 
+/* Contenedor de cada tarjeta */
 .photo-container {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 300px; /* Limita el ancho máximo de la tarjeta */
+  height: auto; /* La altura se ajusta automáticamente */
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Para evitar que el contenido se desborde */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px;
+  margin: 10px;
 }
 
+/* Efecto hover para las tarjetas */
+.photo-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Hacer que las imágenes sean cuadradas pero sin recorte */
 .photo {
   width: 100%;
-  max-width: 600px; /* Aseguramos que la imagen no sea más grande de lo necesario */
+  height: 100%; /* Hace que la imagen ocupe todo el espacio */
+  object-fit: contain; /* Ajusta la imagen sin recortarla */
   border-radius: 10px;
-  margin: 20px 0;
+  margin-bottom: 10px;
 }
 
+/* Asegurarnos de que las imágenes verticales se redimensionen y no sobresalgan */
+.photo.vertical {
+  max-height: 350px; /* Ajusta la altura máxima para imágenes verticales */
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el mensaje debajo de cada imagen */
 .photo-message {
+  font-size: 1.1em;
+  color: #333;
+  text-align: center;
+  line-height: 1.5;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
   margin-top: 10px;
-  font-size: 1.2em;
-  color: #555;
+  font-family: 'Arial', sans-serif;
+  min-height: 80px; /* Garantiza que el mensaje tenga suficiente espacio */
 }
 
+/* Botones de control (anterior, siguiente) */
 .controls {
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .controls button {
   background-color: #ff69b4;
   color: #fff;
   border: none;
-  padding: 10px 15px;
+  padding: 15px 30px;
   margin: 5px;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
 }
 
 .controls button:hover {
   background-color: #ff85c5;
 }
 
-/* Responsividad: ajusta el tamaño en pantallas más pequeñas */
+/* Responsividad: Ajustar tamaño en dispositivos móviles */
 @media (max-width: 600px) {
+  /* Ajustar el contenedor principal */
+  .photo-gallery {
+    padding: 15px;
+  }
+
+  /* Hacer que las tarjetas ocupen todo el ancho */
+  .photo-container {
+    width: 100%;
+    max-width: 100%;
+    height: auto; /* Dejar que la tarjeta ajuste su tamaño */
+  }
+
+  /* Estilo para la imagen */
+  .photo {
+    height: 100%; /* Asegura que la imagen ocupe todo el espacio del contenedor cuadrado */
+  }
+
+  /* Para las imágenes verticales, dar un tamaño fijo de 240x350 */
+  .photo.vertical {
+    width: 240px;
+    height: 350px;
+    object-fit: contain; /* Mantiene la proporción sin recortar */
+  }
+
+  /* Ajuste de la fuente del mensaje */
   .photo-message {
-    font-size: 1em; /* Reducir el tamaño del mensaje en pantallas pequeñas */
+    font-size: 1.1em;
+  }
+
+  /* Botones */
+  .controls button {
+    font-size: 1em;
+    padding: 12px 25px;
+  }
+}
+
+/* Pantallas medianas (tabletas) */
+@media (max-width: 1000px) {
+  .photo-gallery {
+    padding: 20px;
+  }
+
+  .photo-container {
+    max-width: 300px; /* Reducir tamaño de las tarjetas */
+    height: auto; /* Ajuste automático de la altura */
+  }
+
+  .photo {
+    height: 100%;
+  }
+
+  .photo-message {
+    font-size: 1.1em;
   }
 
   .controls button {
-    font-size: 0.9em;
-    padding: 8px 12px;
+    font-size: 1.05em;
+    padding: 12px 25px;
+  }
+}
+
+/* Pantallas grandes (desktop) */
+@media (min-width: 1000px) {
+  .photo-gallery {
+    padding: 40px;
+    gap: 30px; /* Aumentar el espacio entre las tarjetas */
+  }
+
+  .photo-container {
+    width: 300px;
+    height: auto; /* Ajuste automático de la altura */
+  }
+
+  .photo {
+    height: 100%;
+  }
+
+  .photo-message {
+    font-size: 1.2em;
+  }
+
+  .controls button {
+    font-size: 1.2em;
+    padding: 14px 30px;
   }
 }

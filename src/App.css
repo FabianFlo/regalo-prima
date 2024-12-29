@@ -1,18 +1,26 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #9f41ad; /* Color de fondo solicitado */
-  color: #fff; /* Texto blanco para contrastar con el fondo */
+  background-color: #9f41ad; /* Fondo morado que mencionaste */
+  color: #fff; /* Texto blanco para que destaque sobre el fondo */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 20px; /* Un pequeño margen para que no se vea pegado al borde */
+  /* padding: 20px; */
   box-sizing: border-box;
+  overflow: hidden; /* Evitar desplazamientos horizontales no deseados */
 }
 
 .app {
-  max-width: 800px;
   width: 100%;
+  max-width: 1200px; /* Limitar el ancho máximo para pantallas grandes */
+  /* padding: 20px; */
   text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .app {
+    max-width: 100%;
+  }
 }

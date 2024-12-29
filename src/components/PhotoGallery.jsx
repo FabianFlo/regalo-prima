@@ -79,8 +79,10 @@ const PhotoGallery = () => {
       <div className="controls">
         <button onClick={prevPhoto}>Anterior</button>
         <button onClick={nextPhoto}>Siguiente</button>
+        <br /><br />
       </div>
     </div>
+
   );
 };
 

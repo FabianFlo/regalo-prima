@@ -58,11 +58,12 @@
   min-height: 100px; /* Garantiza que el mensaje tenga suficiente espacio */
 }
 
-/* Botones de control (anterior, siguiente) */
+/* Botones de control (anterior, siguiente, sorpresa) */
 .controls {
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  gap: 10px;
 }
 
 .controls button {
@@ -70,7 +71,6 @@
   color: #fff;
   border: none;
   padding: 15px 30px;
-  margin: 5px;
   border-radius: 8px;
   cursor: pointer;
   font-size: 1.1em;
@@ -80,10 +80,15 @@
 .controls button:hover {
   background-color: #ff85c5;
 }
-.photo-18 {
-  height: 205px !important;
+
+/* Estilo especial para el botón de sorpresa */
+.controls button:last-child {
+  background-color: #f090d9;
 }
 
+.controls button:last-child:hover {
+  background-color: #f4a7e2;
+}
 
 /* Responsividad: Ajustar tamaño en dispositivos móviles */
 @media (max-width: 600px) {
@@ -108,12 +113,83 @@
 
   /* Ajuste de la fuente del mensaje */
   .photo-message {
-    font-size: 1.1em;
+    font-size: 1em;
   }
 
   /* Botones */
   .controls button {
     font-size: 1em;
     padding: 12px 25px;
+  }
+}
+/* Estilo de la card de sorpresa */
+.surprise-card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.surprise-content {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.surprise-content h2 {
+  margin-bottom: 15px;
+  color: #ff69b4;
+  font-family: 'Arial', sans-serif;
+}
+
+.surprise-content p {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.surprise-image {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.close-button {
+  background-color: #ff69b4;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: #ff85c5;
+}
+
+/* Animación de fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

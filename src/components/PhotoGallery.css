@@ -51,12 +51,11 @@
   line-height: 1.5;
   padding: 10px;
   background-color: #ffffff00;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: none;
   flex-grow: 1;
   margin-top: 10px;
   font-family: 'Arial', sans-serif;
-  min-height: 80px; /* Garantiza que el mensaje tenga suficiente espacio */
+  min-height: 100px; /* Garantiza que el mensaje tenga suficiente espacio */
 }
 
 /* Botones de control (anterior, siguiente) */
@@ -81,6 +80,10 @@
 .controls button:hover {
   background-color: #ff85c5;
 }
+.photo-18 {
+  height: 205px !important;
+}
+
 
 /* Responsividad: Ajustar tamaño en dispositivos móviles */
 @media (max-width: 600px) {

@@ -97,8 +97,8 @@ const PhotoGallery = () => {
             <h2>¡Sorpresa!</h2>
             <p>
             Este tatuaje significa que nunca estás sola. Me recuerda que, aunque no siempre estemos juntos, 
-    tú me das fuerza. No puedo rendirme porque sé que hay personas, como tú, que me necesitan vivo. 
-    Siempre te llevo conmigo.</p>
+            tú me das fuerza. No puedo rendirme porque sé que hay personas, como tú, que me necesitan vivo. 
+            Siempre te llevo conmigo.</p>
             <img src={tattooPhoto} alt="Tatuaje dedicado" className="surprise-image" />
             <button onClick={closeSurprise} className="close-button">Cerrar</button>
           </div>
